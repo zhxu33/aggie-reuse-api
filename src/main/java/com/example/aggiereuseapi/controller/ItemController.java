@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.sql.Timestamp;
 
 @RestController
 @RequestMapping("/item")
@@ -78,18 +79,18 @@ public class ItemController {
             if (itemOptional.isPresent()) {
                 Item item = itemOptional.get();
 
-                if (updatedItem.getName() != null) {
+                if (!updatedItem.getName().isEmpty()) {
                     item.setName(updatedItem.getName());
                 }
-                if (updatedItem.getCategory() != null) {
+                if (!updatedItem.getCategory().isEmpty()) {
                     item.setCategory(updatedItem.getCategory());
                 }
-                if (updatedItem.getDescription() != null) {
+                if (!updatedItem.getDescription().isEmpty()) {
                     item.setDescription(updatedItem.getDescription());
                 }
-
+                item.setTime(new Timestamp(System.currentTimeMillis()));
                 itemRepository.save(item);
-                return ResponseEntity.ok("Updated item");
+                return ResponseEntity.ok("Updated item id " + id);
             } else {
                 return ResponseEntity.notFound().build();
             }
