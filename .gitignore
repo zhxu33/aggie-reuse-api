@@ -3,7 +3,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-*.properties
+.env
+pgdata
+database
 
 ### STS ###
 .apt_generated

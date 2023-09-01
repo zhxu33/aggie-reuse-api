@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  server:
+    build: .
+    container_name: aggie-reuse-api
+    environment:
+      - user=postgres
+      - password=postgres
+      - db_url=aggie-reuse-db
+      - port=5432
+      - database=aggie_reuse_inventory
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres
+    container_name: aggie-reuse-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: aggie_reuse_inventory
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
