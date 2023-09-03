@@ -17,9 +17,8 @@ CMD ["java", "-jar", "app.jar"]
 #port = 5432
 #database = database_name
 
-#build test
 #mvn clean package
-#docker build -t aggie-reuse-api .
-#docker run -p 8080:8080 aggie-reuse-api
+#docker build -t aggie-reuse-spring .
+#docker run -p 8080:8080 aggie-reuse-spring
 
 #aws login: https://stackoverflow.com/questions/60807697/docker-login-error-storing-credentials-the-stub-received-bad-data
