@@ -12,7 +12,7 @@ https://aggie-reuse-inventory-108edb5bada0.herokuapp.com/
 * Docker: https://www.docker.com/products/docker-desktop
 1. Add .env file
    ```
-   cd . > .env
+   echo.>.env
    ```
 3. Configure environment variables
    ```
