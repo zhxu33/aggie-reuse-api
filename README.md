@@ -6,6 +6,13 @@ https://aggie-reuse-inventory-108edb5bada0.herokuapp.com/
 
 ## Getting Started:
 
+### Run on local machine
+ * Docker: https://www.docker.com/products/docker-desktop
+```
+mvn clean package
+docker compose up
+```
+
 ### Prerequisites
 * Java: https://www.oracle.com/java/technologies/downloads/#jdk19-windows
 * Maven: https://maven.apache.org/download.cgi 
@@ -30,13 +37,6 @@ https://aggie-reuse-inventory-108edb5bada0.herokuapp.com/
 ### Usage
 ```sh
 mvn spring-boot:run
-```
-
-### Run on local machine
- * Docker: https://www.docker.com/products/docker-desktop
-```
-mvn clean package
-docker compose up
 ```
 
 
